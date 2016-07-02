@@ -1,0 +1,33 @@
+####################################
+# Useful keybinds you may need:    #
+# Mouse button 5 -> M5             #
+# Arrow key up -> UP               #
+# space key -> space               #
+# Skill names must be in english!  #
+# Simply replace with your own     #
+####################################
+
+[Skills]
+Aegis             = 1
+Shielding Hands   = 2
+Restore Condition = 3
+Guardian          = 4
+Spirit Bond       = space
+Aura Of Stability = q
+Holy Veil         = e
+Balanced Stance   = r
+
+###################################################################
+# Comment your own number (like I did with 6), uncomment the rest #
+###################################################################
+
+[Players]
+Player 1 = w
+Player 2 = a
+Player 3 = s
+Player 4 = d
+Player 5 = z
+#Player 6 = f
+Player 7 = x
+Player 8 = c
+Self     = f
