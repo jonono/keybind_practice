@@ -35,7 +35,7 @@ class StartQT4(QtGui.QMainWindow):
 		QtCore.QObject.connect(self.ui.stop_button,QtCore.SIGNAL("clicked()"), self.stop_counter)
 		self.ui.success_label.setStyleSheet('QLabel#success_label {background: lightgrey}')
 		self.ui.success_label.setText('Stopped.')
-		
+		self.ui.hits_label.setText('Hits: 0')
 		self.ui.skills_label.setText('Welcome.')
 		self.parse_config()
 		
@@ -51,7 +51,8 @@ class StartQT4(QtGui.QMainWindow):
 		self.success_hits = 0
 		self.ui.success_label.setText('Starting...')
 		self.produce_timer()
-	
+		self.current_input = []
+		self.ui.hits_label.setText('Hits: 0')
 	def produce_timer(self):
 		self.restart_timer = QtCore.QTimer()
 		self.restart_timer.timeout.connect(self.run_challenge)
@@ -68,6 +69,7 @@ class StartQT4(QtGui.QMainWindow):
 		self.ui.start_button.setEnabled(True)
 		self.ui.success_label.setStyleSheet('QLabel#success_label {background: lightgrey}')
 		self.ui.success_label.setText('Stopped.')
+		
 	
 	def keyPressEvent(self, event):
 		if((self.started) & (not(self.parsing))):
@@ -116,6 +118,7 @@ class StartQT4(QtGui.QMainWindow):
 		if((len(self.current_input) == 2) | (self.current_skill in skills.no_target)):
 			self.parse_success()	
 	
+	
 	def parse_success(self):
 		self.parsing = 1
 		spent_time = time.time() - self.current_time
@@ -136,6 +139,8 @@ class StartQT4(QtGui.QMainWindow):
 		self.ui.reaction_label.setText("{:.1f}".format(spent_time) + 's')
 		self.produce_timer()
 		self.current_input = []
+		self.ui.hits_label.setText('Hits: ' + str(self.total_hits))
+	
 	
 	def compare_keys(self):
 		mbuttons = [x[1] for x in self.mouse_buttons]
@@ -157,7 +162,6 @@ class StartQT4(QtGui.QMainWindow):
 			else:
 				correct_skill_button = QtGui.QKeySequence.fromString(self.user_skills.get(self.current_skill))
 		return (self.current_input[0] == correct_player_button) & (self.current_input[1] == correct_skill_button)
-		#return (self.current_input[0] == QtGui.QKeySequence.fromString(self.user_players.get(self.current_player))) & (self.current_input[1] == QtGui.QKeySequence.fromString(self.user_skills.get(self.current_skill)))
 
 		
 	def parse_config(self):

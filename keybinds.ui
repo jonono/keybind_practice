@@ -131,7 +131,7 @@
      <set>Qt::NoTextInteraction</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="hits_label">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -153,10 +153,10 @@
      <number>1</number>
     </property>
     <property name="text">
-     <string>Your input:</string>
+     <string>Hits:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -397,7 +397,7 @@
    <zorder>widget</zorder>
    <zorder>horizontalLayoutWidget</zorder>
    <zorder>skills_label</zorder>
-   <zorder>label_2</zorder>
+   <zorder>hits_label</zorder>
    <zorder>horizontalLayoutWidget_2</zorder>
    <zorder>success_label</zorder>
    <zorder>user_input</zorder>
