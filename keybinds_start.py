@@ -112,7 +112,7 @@ class StartQT4(QtGui.QMainWindow):
 			mouse_tuple = [x for x in self.mouse_buttons if x[0] == key]
 			self.ui.user_input.setText(self.ui.user_input.text() + mouse_tuple[0][1])
 		else:
-			self.ui.user_input.setText(self.ui.user_input.text() + QtGui.QKeySequence(key).toString().upper())
+			self.ui.user_input.setText(self.ui.user_input.text() + str(QtGui.QKeySequence(key).toString()).upper())
 		self.current_input.append(key)
 			
 		if((len(self.current_input) == 2) | (self.current_skill in skills.no_target)):
