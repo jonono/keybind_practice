@@ -6,6 +6,8 @@ Keybind practice tool for Monks in GW1
 
 To download and execute right away, [click here](https://github.com/miguelcgmarques/keybind_practice/releases/download/R_1/KeybindPractice_v1.zip).
 
+Make sure you install MSVC++ Redist: [32bit](http://www.microsoft.com/en-in/download/details.aspx?id=5555) or [64bit](http://www.microsoft.com/en-us/download/details.aspx?id=14632).
+
 Edit config.txt to suit your own keybindings!
 
 
