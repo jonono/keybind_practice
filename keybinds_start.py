@@ -134,7 +134,8 @@ class StartQT4(QtGui.QMainWindow):
 			self.total_time+= spent_time
 		else:
 			self.total_time = spent_time
-		self.ui.ratio_label.setText( "{:.1f}".format(self.success_hits/self.total_hits*100) + '%')
+		self.ui.ratio_label.setText( "{:.1f}".format(float(self.success_hits)/self.total_hits*100) + '%')
+
 		self.ui.avg_label.setText("{:.1f}".format(self.total_time/self.total_hits) + 's')
 		self.ui.reaction_label.setText("{:.1f}".format(spent_time) + 's')
 		self.produce_timer()
